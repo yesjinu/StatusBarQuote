@@ -1,6 +1,6 @@
 import { Plugin } from 'obsidian';
 import SampleModal from "./components/SampleModal";
-import QuoteSettingTab from "./components/QuoteSettingTab";
+import MySettingTab from "./components/MySettingTab";
 
 interface MyPluginSettings {
 	quote: string;
@@ -10,7 +10,7 @@ const DEFAULT_SETTINGS: MyPluginSettings = {
 	quote: 'Take chances, make mistakes, get messy.',
 }
 
-export default class QuoteStatusBarPlugin extends Plugin {
+export default class StatusBarQuote extends Plugin {
 	settings: MyPluginSettings;
 
 	async onload() {
@@ -34,7 +34,7 @@ export default class QuoteStatusBarPlugin extends Plugin {
 		});
 
 		// This adds a settings tab so the user can configure various aspects of the plugin
-		this.addSettingTab(new QuoteSettingTab(this.app, this));
+		this.addSettingTab(new MySettingTab(this.app, this));
 	}
 
 	onunload() {

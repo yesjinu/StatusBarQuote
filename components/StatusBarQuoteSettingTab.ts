@@ -1,7 +1,7 @@
 import {App, PluginSettingTab, Setting} from "obsidian";
 import StatusBarQuote from "../main";
 
-class MySettingTab extends PluginSettingTab {
+class StatusBarQuoteSettingTab extends PluginSettingTab {
 	plugin: StatusBarQuote;
 
 	constructor(app: App, plugin: StatusBarQuote) {
@@ -30,4 +30,4 @@ class MySettingTab extends PluginSettingTab {
 	}
 }
 
-export default MySettingTab;
+export default StatusBarQuoteSettingTab;

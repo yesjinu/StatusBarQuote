@@ -1,10 +1,10 @@
 import {App, PluginSettingTab, Setting} from "obsidian";
-import MyPlugin from "../main";
+import QuoteStatusBarPlugin from "../main";
 
 class QuoteSettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+	plugin: QuoteStatusBarPlugin;
 
-	constructor(app: App, plugin: MyPlugin) {
+	constructor(app: App, plugin: QuoteStatusBarPlugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}

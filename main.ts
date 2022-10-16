@@ -14,7 +14,7 @@ const DEFAULT_SETTINGS: MyPluginSettings = {
 	quote: 'Take chances, make mistakes, get messy.',
 }
 
-export default class MyPlugin extends Plugin {
+export default class QuoteStatusBarPlugin extends Plugin {
 	settings: MyPluginSettings;
 
 	async onload() {

@@ -1,13 +1,21 @@
-import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
+import {
+	App,
+	Editor,
+	MarkdownView,
+	Modal,
+	Plugin,
+	PluginSettingTab,
+	Setting
+} from 'obsidian';
 
 // Remember to rename these classes and interfaces!
 
 interface MyPluginSettings {
-	mySetting: string;
+	quote: string;
 }
 
 const DEFAULT_SETTINGS: MyPluginSettings = {
-	mySetting: 'default'
+	quote: 'Take chances, make mistakes, get messy.',
 }
 
 export default class MyPlugin extends Plugin {
@@ -15,6 +23,9 @@ export default class MyPlugin extends Plugin {
 
 	async onload() {
 		await this.loadSettings();
+
+		const statusBar = this.addStatusBarItem();
+		statusBar.createEl("span", { text: `${this.settings.quote} ✍️` });
 
 		// This creates an icon in the left ribbon.
 		const ribbonIconEl = this.addRibbonIcon('dice', 'Sample Plugin', (evt: MouseEvent) => {
@@ -120,17 +131,17 @@ class SampleSettingTab extends PluginSettingTab {
 
 		containerEl.empty();
 
-		containerEl.createEl('h2', {text: 'Settings for my awesome plugin.'});
+		containerEl.createEl('h2', {text: 'Pick one quote that makes you brave'});
 
 		new Setting(containerEl)
-			.setName('Setting #1')
-			.setDesc('It\'s a secret')
+			.setName('QUOTE')
+			.setDesc('What drives you?')
 			.addText(text => text
-				.setPlaceholder('Enter your secret')
-				.setValue(this.plugin.settings.mySetting)
+				.setPlaceholder('Enter your mantra')
+				.setValue(this.plugin.settings.quote)
 				.onChange(async (value) => {
-					console.log('Secret: ' + value);
-					this.plugin.settings.mySetting = value;
+					console.log('Mantra: ' + value);
+					this.plugin.settings.quote = value;
 					await this.plugin.saveSettings();
 				}));
 	}

@@ -3,7 +3,7 @@
 	"name": "Status Bar Quote",
 	"version": "0.1.0",
 	"minAppVersion": "0.15.0",
-	"description": "Show your favorite quote in the status bar",
+	"description": "Show your favorite quote in obsidian status bar",
 	"author": "Jinu",
 	"authorUrl": "https://yesjinu.github.io",
 	"isDesktopOnly": false

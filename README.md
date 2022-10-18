@@ -1,3 +1,6 @@
+<img width="1440" alt="Screen Shot 2022-10-18 at 9 00 32 PM" src="https://user-images.githubusercontent.com/45530894/196423905-933ec467-024f-4683-99df-551f351c4b87.png">
+
+
 # Quote in your status bar
 
 This is a simple plugin for Obsidian that adds a quote to your status bar. It's a bit like the "Quote of the day" plugin, but it's not just a random quote. 
